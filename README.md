@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+Using yarn classic as it’s LTS and is currently preferred by next js
 
-First, run the development server:
+Using next js as there’s no reason based on requirements to build the solution from scratch
+You don’t need a team of people to maintain the core solution
+Don't have to do documentation from scratch
+Common features are delivered with each version. Only need to write features that are not available
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Using design system to ensure that the UX on the SPA is cohesive, 
+The version is defined at workspace level. Each team may use a different version so that in case of an update they can do the update at their own pace 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+What’s missing:
+Deployment
+Linter
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+Authentication:
+Auth components need to be encapsulated and owned by a team
+at scale teams don’t want to worry about authentication therefore it should be enforced that only the latest version is always used
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+DOCS:
+Custom layouts need to be added as nested layouts
+app/page contains the homepage
+Each other path is contained in the page file of a folder in app folder
+Subpaths are created by creating a subfolder under those folders
+In cases of a team providing universal tool like navbar, selected teams may opt out of using it on their pages. Such changes need to be approved by code owners (the onboarding team)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
